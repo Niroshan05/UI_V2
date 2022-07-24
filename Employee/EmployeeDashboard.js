@@ -10,6 +10,9 @@ import Form from 'react-bootstrap/Form';
 import Table from 'react-bootstrap/esm/Table';
 
 
+
+
+
 export default class EmployeeDashboard extends Component {
   constructor(){
     super();
@@ -55,6 +58,9 @@ componentDidMount(){
   this.ShowSpecificLeave();
   this.ShowRepLeave();
 }
+//  testing grid select
+
+
 
     render() {
         let UserName=localStorage.getItem("userName");
@@ -82,7 +88,7 @@ componentDidMount(){
           <Card.Body>
             <Card.Title>Manager Details</Card.Title>
             <Card.Text>
-              <Button href="/SearchByIdMan">Detail</Button>
+              <Button  href="/SearchByIdMan">Detail</Button>
             </Card.Text>
           </Card.Body>
         </Card>
@@ -90,7 +96,7 @@ componentDidMount(){
       <br></br>
       </Row>
       {/* NEW ROW */}
-      <Row xs={1} md={1} className="g-1">
+      {/* <Row xs={1} md={1} className="g-1">
       <Col className="g-2">
       
         <Card  style={{ height:'8rem'  }}>
@@ -103,10 +109,10 @@ componentDidMount(){
           </Card.Body>
         </Card>
       </Col>
-      </Row>
+      </Row>*/}
       <Row xs={1} md={1} className="g-1">
       <Col className="g-2">
-        <Card>
+        <Card> 
           {/* belo part is to show leave details inside dashboard  */}
           <Card.Body>
             <Card.Title>My Leave</Card.Title>
@@ -150,21 +156,26 @@ componentDidMount(){
                 </tr>
             </tbody>):null
                 } 
+
             
             </Table>
             </div>
              </Table>
+            
+             <div >
+               <Button class="btn btn-success btn-lg float-right"  href="/Addleave">New Leave Applicaton </Button>
+             </div>
             </Card.Text>
           </Card.Body>
         </Card>
       </Col>
       </Row>
-      <Row xs={1} md={1} className="g-1">
+          <Row xs={1} md={1} className="g-1">
       <Col className="g-2">
         <Card>
           {/* belo part is to show leave details inside dashboard  */}
           <Card.Body>
-            <Card.Title>My Reporting Employee's Leave</Card.Title>
+            <Card.Title>My Reporting Employee's Pending Leave Applications</Card.Title>
             <Card.Text>
               <Table>
               
@@ -185,6 +196,7 @@ componentDidMount(){
                 <th>Enddate</th>
                 <th>status</th>
                 <th>Reason</th>
+                <th></th>
                 </tr>
            </thead>
           
@@ -202,6 +214,7 @@ componentDidMount(){
                     <td>{x.endDate}</td>
                     <td>{x.status}</td>
                     <td>{x.reason}</td>
+                    <td><Button variant="inline-primary" href="/<somepage>">Approve/Deny</Button></td>
                 </tr>
             </tbody>):null
                 } 

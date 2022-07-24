@@ -65,7 +65,7 @@ export default class CreateEmp extends Component {
             <div className="App-header">
                  
                  <Card  style={{ width:'30rem'  }} >
-                 <Card.Header className="text-center">Sign in</Card.Header>
+                 <Card.Header className="text-center">Sign Up</Card.Header>
                  <Card.Body>
             <form>
                 <Form.Group className="mb-0" >

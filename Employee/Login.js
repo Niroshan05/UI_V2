@@ -104,8 +104,10 @@ export default class Login extends Component {
             </FloatingLabel>
             
             </Form.Group>
-            <Col md={{ span: 6, offset: 3 }}>{<Button type="submit" variant="danger" onClick={this.Login} >Sign in</Button>}</Col>
-             
+            {/* <Col md={{ span: 6, offset: 3 }}>{<Button type="submit" variant="danger" onClick={this.Login} >Sign in</Button>}</Col> */}
+             <div class="col-md-12 text-center">
+             <Button type="submit" variant="danger" onClick={this.Login} >Sign in</Button>
+             </div>
             
             </form>
             </Card.Body>

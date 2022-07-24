@@ -61,11 +61,9 @@ export default class SearchbyId extends Component {
         const{leaveBalance}=this.state;
         const{password}=this.state;
         return (
-            <>  <div className="App-header">
-              
-            
-            
-              
+            <>  
+            <div className="App-header">
+
               <Card style={{  }}>
                  <div className="alignleft">
                      <Card>

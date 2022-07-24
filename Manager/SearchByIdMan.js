@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react'
 import Table from 'react-bootstrap/Table';
 import Alert from 'react-bootstrap/Alert';
+import Card from 'react-bootstrap/Card';
 
 export default class SearchByIdMan extends Component {
     constructor(){
@@ -40,6 +41,7 @@ export default class SearchByIdMan extends Component {
     render() {
        
         let managerId= localStorage.getItem("mid");
+        
         const{firstName}=this.state;
         const{lastName}=this.state;
         const{e_Mail}=this.state;
@@ -47,45 +49,21 @@ export default class SearchByIdMan extends Component {
         const{department}=this.state;
         
         return (
-            <>  <div className="App-header">
-            <form>
-              <table > 
-                  <thead>
-             
-                </thead>
-              </table> 
+            <>  <div className="App-header"></div>
             
-            </form>
-            </div>
-              {/* //id displayer */}
+              <div className="App-header">
+
+<Card style={{  }}></Card>
+   <div className="alignleft">
+                     <Card>
+                     </Card><Card> <h3>&nbsp;managerId &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      :  {managerId}&nbsp;</h3><br></br>
+                     </Card><Card> <h3>&nbsp;full name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          :  {firstName+"  "+lastName}&nbsp;</h3><br></br>
+                     </Card><Card>  <h3>&nbsp;E_Mail&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             :  {e_Mail}&nbsp;&nbsp;&nbsp;&nbsp;</h3><br></br>
+                     </Card><Card>   <h3>&nbsp;Phone number &nbsp;&nbsp;&nbsp;:  {contactNumber}&nbsp;</h3><br></br>
+                     </Card><Card>   <h3>&nbsp;Department &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        :  {department}&nbsp;</h3><br></br>
+                    </Card> </div >
               
-              <Table striped bordered hover>
-                  <thead>
-                  
-              <tr>
-              <th>manager Id</th>
-              <th>full name</th>
-              
-              <th>E_Mail</th>
-              <th>Phone number</th>
-              <th>Department</th>
-              
-              </tr>
-             </thead>
-            
-            
-                    <tbody>
-                     <tr>
-                     <td>{managerId}</td>
-                     <td>{firstName+"  "+lastName}</td>
-                     <td>{e_Mail}</td>
-                     <td>{contactNumber}</td>
-                     <td>{department}</td>
-                     
-                     </tr>
-                    </tbody>
-              
-              </Table>
+              </div>
               </>
         )
     }

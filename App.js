@@ -14,8 +14,11 @@ import EmployeeDashboard from './Employee/EmployeeDashboard';
 import ShowAllLeave from './LeaveManagement/ShowAllLeave';
 import AddLeave from './LeaveManagement/AddLeave';
 import ShowSpecificLeave from './LeaveManagement/ShowSpecificLeave';
+import ApproveDeny from './LeaveManagement/ApproveDeny';
 
 import SearchByIdMan from './Manager/SearchByIdMan';
+
+import ErrorPage from './ErrorPage';
 
 
 
@@ -62,6 +65,7 @@ function App() {
              </Navbar>
       <Routes>
         
+        <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
         <Route path="/" element={<Login/>}></Route>
         <Route path="/Login" element={<Login/>}></Route>
         <Route path="/ShowAllEmp" element={<ShowAllEmp/>}></Route>
@@ -74,6 +78,8 @@ function App() {
         <Route path="/AddLeave" element={<AddLeave/>}></Route>
         <Route path="/SpecificLeave" element={<ShowSpecificLeave/>}></Route>
         <Route path="/SearchByIdMan" element={<SearchByIdMan></SearchByIdMan>}></Route>
+        <Route path="/ApproveDeny" element={<ApproveDeny></ApproveDeny>}></Route>
+        
         
         
     
