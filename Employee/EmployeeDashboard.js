@@ -214,7 +214,10 @@ componentDidMount(){
                     <td>{x.endDate}</td>
                     <td>{x.status}</td>
                     <td>{x.reason}</td>
-                    <td><Button variant="inline-primary" href="/<somepage>">Approve/Deny</Button></td>
+                    <td>
+                      <Button variant="inline-primary" href="/ApproveDeny">Approve/Deny</Button>
+                      
+                    </td>
                 </tr>
             </tbody>):null
                 } 

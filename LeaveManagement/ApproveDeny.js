@@ -30,6 +30,9 @@ export default class ApproveDeny extends Component {
     this.ShowSpecificLeave=this.ShowSpecificLeave.bind(this);
         
     }
+    componentDidMount(){
+        this.SearchById();
+    }
     // show specific emp 
     SearchById(e){
         
@@ -121,6 +124,20 @@ export default class ApproveDeny extends Component {
            <div className="App-header">
 
 <Card style={{  }}>
+<table > 
+                <thead>
+            <tr >
+                <td ><label >LeaveId</label>
+                <input className="spacer" type="text" name="leaveId" onChange={(e)=>this.setState({leaveId:e.target.value})}></input></td>
+                </tr>
+                <tr>
+                <td><Button variant="danger" onClick={(e)=>this.ShowSpecificLeave(e)}>search</Button>
+                
+                 </td>
+              
+              </tr>
+              </thead>
+            </table> 
    <div className="alignleft">
        <Card>
         <h5>&nbsp;Employee Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:  {employeeId}&nbsp;</h5>

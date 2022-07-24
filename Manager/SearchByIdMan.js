@@ -24,13 +24,15 @@ export default class SearchByIdMan extends Component {
         let managerId=localStorage.getItem("mid");
         axios.get('http://localhost:50735/api/ManagerDetails/ShowSpecific/'+managerId)
         .then(Response=>{
+            localStorage.setItem("managerMail",Response.data.e_Mail);
             this.setState({
+                
                 managerId:Response.data.employeeId,
                 firstName:Response.data.firstName,
                 lastName:Response.data.lastName,
                 e_Mail:Response.data.e_Mail,
                 contactNumber:Response.data.contactNumber,
-                department:Response.data.department,
+                department:Response.data.department
                
             })
         })

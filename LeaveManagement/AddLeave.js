@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
  import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import Card from 'react-bootstrap/Card';
+import emailjs from 'emailjs-com'
 
 export default class AddLeave extends Component {
     constructor(){
@@ -58,13 +59,24 @@ export default class AddLeave extends Component {
           }).then(response=>{
             console.warn(response);
         alert("leave inserted");
+        this.sendEmail(e);
         window.location="/EmployeeDashboard"
     })
     .catch(error=>{
         alert(error);
     })
     }
-
+    sendEmail(e) {
+      e.preventDefault();    
+  
+      emailjs.sendForm('service_6q8sl9c', 'template_0br1935', e.target, 'V94Z_reup8HiLV9vj')
+        .then((result) => {
+              
+        }, (error) => {
+            console.log(error.text);
+        });
+    }
+  
     handleChange(changeObject)
     {
         this.setState(changeObject);    
